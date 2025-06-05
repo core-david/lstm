@@ -1,0 +1,56 @@
+# Raw data input
+raw_hotel_data:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/EDA_data.csv
+
+eda_final:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/TSA_data.csv
+  load_args:
+    encoding: ISO-8859-1
+  save_args:
+    index: False
+
+# Preprocessing outputs
+daily_data:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/daily_data.parquet
+
+
+daily_limpio:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/daily_limpio.parquet
+
+# Model outputs
+trained_model:
+  # type: pickle.PickleDataset
+  # filepath: data/06_models/lstm_model_results.pkl
+  # versioned: true
+  type: kedro_mlflow.io.models.MlflowModelTrackingDataset
+  flavor: mlflow.tensorflow
+  artifact_path: "lstm_model"
+  save_args:
+    registered_model_name: "trainedLSTM"
+
+# Evaluation metrics datasets
+# predictions_real:
+#   type: kedro_mlflow.io.metrics.MlflowMetricDataset
+
+# y_test_real:
+#   type: kedro_mlflow.io.metrics.MlflowMetricDataset
+
+mae:
+  type: kedro_mlflow.io.metrics.MlflowMetricDataset
+
+rmse:
+  type: kedro_mlflow.io.metrics.MlflowMetricDataset
+
+r2:
+  type: kedro_mlflow.io.metrics.MlflowMetricDataset
+
+
+evaluation_plot:
+  type: kedro_mlflow.io.artifacts.MlflowArtifactDataset
+  dataset:
+    type: matplotlib.MatplotlibWriter
+    filepath: data/07_model_output/evaluation_plot.png

@@ -1,0 +1,6 @@
+# conf/base/parameters.yml
+
+time_step: 30
+test_size: 0.2
+use_rolling: true
+n_periods: 30
