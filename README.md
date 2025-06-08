@@ -92,4 +92,15 @@ All results are stored and versioned in MLflow. | Todos los resultados se almace
 - **You can modify hyperparameters and paths in `conf/base/`.**  
   *Puedes modificar hiperparámetros y rutas en `conf/base/`.*
 
+## 🧑‍🍳 Developed by MasterChefs | Desarrollado por el equipo MasterChefs
 
+This project was collaboratively developed by the MasterChefs team.  
+Este proyecto fue desarrollado colaborativamente por el equipo MasterChefs.
+
+**Team Members | Integrantes del equipo:**
+
+- [Iván Ortiz]([https://link1.com](https://github.com/IvanAOrtiz)) 
+- [David Vargas](https://github.com/DavidVargasXYZ)
+- [Mariano Luna]([https://link2.com](https://github.com/Elma-reano)) 
+- [Diego Garza]([https://link3.com](https://github.com/DiegoGarzaGzz))
+- [Franco Mendoza]()
