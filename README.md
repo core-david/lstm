@@ -99,8 +99,8 @@ Este proyecto fue desarrollado colaborativamente por el equipo MasterChefs.
 
 **Team Members | Integrantes del equipo:**
 
-- [Iván Ortiz]([https://link1.com](https://github.com/IvanAOrtiz)) 
-- [David Vargas](https://github.com/DavidVargasXYZ)
-- [Mariano Luna]([https://link2.com](https://github.com/Elma-reano)) 
-- [Diego Garza]([https://link3.com](https://github.com/DiegoGarzaGzz))
+- [Iván Ortiz]((https://github.com/IvanAOrtiz)) 
+- [David Vargas](https://github.com/core-david)
+- [Mariano Luna]((https://github.com/Elma-reano)) 
+- [Diego Garza]((https://github.com/DiegoGarzaGzz))
 - [Franco Mendoza]()
