@@ -1,112 +1,95 @@
-# LSTM
+# LSTM 
 
 [![Powered by Kedro](https://img.shields.io/badge/powered_by-kedro-ffc900?logo=kedro)](https://kedro.org)
+[![Powered by MLflow](https://img.shields.io/badge/MLflow-tracking-0172b2?logo=mlflow)](https://mlflow.org/)
+[![Powered by TensorFlow](https://img.shields.io/badge/Built%20with-TensorFlow-orange?logo=tensorflow)](https://www.tensorflow.org/)
+[![Powered by Docker](https://img.shields.io/badge/Containerized%20with-Docker-2496ed?logo=docker)](https://www.docker.com/)
 
-# Predicción con LSTM usando Kedro, MLflow y Docker  
-**LSTM Forecasting with Kedro, MLflow, and Docker**
 
-Este repositorio contiene la implementación de un modelo LSTM integrado en un pipeline estructurado con Kedro.  
-This repository contains the implementation of an LSTM model integrated into a structured pipeline using Kedro.
+This repository contains the implementation of an LSTM model integrated into a structured pipeline using Kedro.  
+Este repositorio contiene la implementación de un modelo LSTM integrado en un pipeline estructurado con Kedro.
 
-Se utiliza MLflow para el seguimiento de ejecuciones y Docker con Docker Compose para facilitar la portabilidad y el almacenamiento de los experimentos.  
-MLflow is used for experiment tracking, and Docker with Docker Compose provides portability and experiment storage.
-
----
-
-## Objetivo del proyecto | Project Objective
-
-Desarrollar una arquitectura reproducible y escalable para la predicción de series temporales con LSTM, aprovechando herramientas modernas de MLOps como Kedro y MLflow.  
-To develop a reproducible and scalable architecture for time series forecasting using LSTM, leveraging modern MLOps tools like Kedro and MLflow.
+MLflow is used for experiment tracking, including model versions, metrics, and artifacts. Docker and Docker Compose provide portability and persistent experiment storage.  
+Se utiliza MLflow para el seguimiento de experimentos, incluyendo versiones del modelo, métricas y artefactos. Docker y Docker Compose facilitan la portabilidad y el almacenamiento persistente de los experimentos.
 
 ---
 
-## Tecnologías utilizadas | Technologies Used
+## Project Objective | Objetivo del Proyecto
 
-- **Kedro**: Framework para estructurar proyectos de ciencia de datos.  
-  *Framework for structuring data science projects.*
-
-- **MLflow**: Seguimiento de ejecuciones, parámetros, métricas y artefactos.  
-  *Experiment tracking: parameters, metrics, and artifacts.*
-
-- **Docker + Docker Compose**: Contenerización y orquestación de servicios.  
-  *Containerization and service orchestration.*
-
-- **LSTM (Long Short-Term Memory)**: Red neuronal recurrente para series temporales usando Tensorflow.  
-  *Recurrent neural network for time series using TensorFlow.*
+To develop a reproducible and scalable architecture for time series forecasting using LSTM, leveraging modern MLOps tools like Kedro and MLflow.  
+Desarrollar una arquitectura reproducible y escalable para la predicción de series temporales con LSTM, aprovechando herramientas modernas de MLOps como Kedro y MLflow.
 
 ---
 
-## Estructura del proyecto | Project Structure
+## Technologies Used | Tecnologías Utilizadas
 
-├── conf/ # Configuración del pipeline / Pipeline config
-├── data/ # Datos en crudo y procesados / Raw & processed data
-├── docs/ # Documentación del proyecto / Documentation
-├── notebooks/ # Análisis exploratorio / EDA notebooks
-├── src/ # Código fuente del pipeline / Source code
-├── tests/ # Pruebas automatizadas / Unit tests
-├── .gitignore # Exclusiones de Git / Git ignored files
-├── docker-compose.yml # Servicios Docker / Docker services config
-├── Dockerfile # Imagen base / Base Docker image
-├── pyproject.toml # Configuración de Kedro / Kedro setup
-├── requirements.txt # Dependencias / Python dependencies
-├── README.md # Este archivo / This file
-├── uv.lock # Lockfile de dependencias / Lockfile
+- **Kedro**: Framework for structuring data science projects.  
+  *Framework para estructurar proyectos de ciencia de datos.*
 
+- **MLflow**: Experiment tracking for parameters, metrics, and model artifacts.  
+  *Seguimiento de parámetros, métricas y artefactos de modelos.*
+
+- **Docker + Docker Compose**: Containerization and service orchestration.  
+  *Contenerización y orquestación de servicios.*
+
+- **LSTM (Long Short-Term Memory)**: Recurrent neural network for time series using TensorFlow.  
+  *Red neuronal recurrente para series temporales usando TensorFlow.*
 
 ---
 
-## ⚙️ Instalación y ejecución local  
-**Installation & Local Execution**
+## ⚙️ Installation & Local Execution | Instalación y Ejecución Local
 
 ```bash
-# Clonar el repositorio / Clone the repository
+# Clone the repository / Clonar el repositorio
 git clone https://github.com/youruser/project-name.git
 cd project-name
 
-# Crear y activar un entorno virtual / Create and activate virtual env
+# Create and activate virtual environment / Crear y activar entorno virtual
 uv venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
-# Instalar dependencias / Install dependencies
+# Install dependencies / Instalar dependencias
 pip install -r requirements.txt
 uv sync
 
-# Iniciar MLflow y PostgreSQL con Docker / Start MLflow and PostgreSQL
+# Start MLflow and PostgreSQL / Iniciar MLflow y PostgreSQL
 docker-compose up
 
-# Ejecutar el pipeline / Run the Kedro pipeline
+# Run Kedro pipeline / Ejecutar pipeline de Kedro
 kedro run
 ```
 
-## Visualización de resultados con MLflow  
-**Results Visualization with MLflow**
+## Results Visualization with MLflow | Visualización de Resultados con MLflow
 
-Una vez iniciado Docker con `docker-compose up`, abre tu navegador y visita:  
-Once Docker is up with `docker-compose up`, open your browser and go to: http://localhost:5000
+Once Docker is up with `docker-compose up`, open your browser and go to:  
+**Una vez iniciado Docker con `docker-compose up`, abre tu navegador y visita:**  
+[http://localhost:5000](http://localhost:5000)
 
-Desde ahí podrás ver:  
-From there, you can see:
+You will be able to explore:  
+**Podrás visualizar:**
 
-- **Parámetros utilizados en cada experimento**  
-  *Parameters used in each run*
+- **Parameters used in each run**  
+  *Parámetros utilizados en cada experimento*
 
-- **Métricas obtenidas**  
-  *Collected metrics*
+- **Collected metrics**  
+  *Métricas obtenidas*
 
-- **Artefactos como modelos entrenados**  
-  *Artifacts like trained models*
+- **Artifacts like trained models**  
+  *Artefactos como modelos entrenados*
 
-- **Comparación entre ejecuciones**  
-  *Comparison between runs*
+- **Comparison between executions**  
+  *Comparación entre ejecuciones*
+
+All results are stored and versioned in MLflow. | Todos los resultados se almacenan y versionan en MLflow.
 
 ---
 
-## Notas adicionales | Additional Notes
+## Additional Notes | Notas Adicionales
 
-- **Los datos utilizados en este proyecto no se comparten públicamente por motivos de privacidad.**  
-  *The data used in this project is not publicly shared due to privacy reasons.*
+- **The data used in this project is not publicly shared due to privacy reasons.**  
+  *Los datos utilizados en este proyecto no se comparten públicamente por motivos de privacidad.*
 
-- **Puedes modificar hiperparámetros y rutas en `conf/base/`.**  
-  *You can modify hyperparameters and paths in `conf/base/`.*
+- **You can modify hyperparameters and paths in `conf/base/`.**  
+  *Puedes modificar hiperparámetros y rutas en `conf/base/`.*
 
 
